@@ -1,0 +1,48 @@
+.rejected {
+	background: #d9534f;
+}
+
+.pending {
+	background: #f0ad4e;
+}
+
+.past {
+	background: #5bc0de;
+}
+
+.approved {
+	background: #5cb85c;
+}
+
+.ccw {
+	height: 75px;
+}
+
+.ccw-body {
+	padding: 3px 5px;
+}
+
+.ccw-top {
+	height: 17px;
+	padding: 1px;
+	background-color: #D1DEEF;
+	font-size: 8pt;
+	font-weight: bold;
+	margin-bottom: 2px;
+}
+
+.gridCss .x-column-header-inner {
+	text-align: center;
+}
+
+
+table.table {
+	width: 100%;
+	border: 1px solid #ccc;
+}
+
+	table.table th,
+	table.table td {
+		text-align: left;
+		width: 25%;
+	}

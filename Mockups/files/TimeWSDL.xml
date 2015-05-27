@@ -1,0 +1,133 @@
+<description>
+  <types>
+	<schema>
+	  <element name="TransactionHeader">
+		<complexType>
+		  <sequence>
+			<element name="FormTypeId" type="xsd:string"/>
+			<element name="FromSystemId" type="xsd:guid"/>
+			<element name="FromDocumentId" type="xsd:string"/>
+			<element name="SystemId" type="xsd:int"/>
+			<element name="UserId" type="xsd:string"/>
+			<element name="Activity/Operation" type="xsd:string"/>
+			<element name="Approver" type="xsd:string"/>
+			<element name="Attention" type="xsd:string"/>
+			<element name="BusinessTrip" type="xsd:bool"/>
+			<element name="Calendar" type="xsd:string"/>
+			<element name="City" type="xsd:string"/>
+			<element name="CompTimeDeposit" type="xsd:int"/>
+			<element name="CustomerLocation/Purpose" type="xsd:string"/>
+			<element name="CustomerName" type="xsd:string"/>
+			<element name="CustomerSite" type="xsd:string"/>
+			<element name="DepartureDate" type="xsd:date"/>
+			<element name="DistScale" type="xsd:string"/>
+			<element name="DistScaleAccom" type="xsd:string"/>
+			<element name="DistToSite" type="xsd:double"/>
+			<element name="DistToSiteAccom" type="xsd:double"/>
+			<element name="FieldBreakDays" type="xsd:int"/>
+			<element name="FLA" type="xsd:double"/>
+			<element name="IHRISID" type="xsd:int"/>
+			<element name="JobComplete" type="xsd:bool"/>
+			<element name="JobLocation" type="xsd:string"/>
+			<element name="Location" type="xsd:string"/>
+			<element name="Night" type="xsd:bool"/>
+			<element name="OnSiteSince" type="xsd:date"/>
+			<element name="Platform" type="xsd:string"/>
+			<element name="Radius" type="xsd:string"/>
+			<element name="Reason" type="xsd:string"/>
+			<element name="ServiceOrder" type="xsd:string"/>
+			<element name="Shift" type="xsd:string"/>
+			<element name="SiteComplete" type="xsd:bool"/>
+			<element name="SiteCountry" type="xsd:string"/>
+			<element name="SiteManager" type="xsd:string"/>
+			<element name="ToolingUsed" type="xsd:string"/>
+			<element name="UnitNumber" type="xsd:string"/>
+			<element name="WorkLocation" type="xsd:string"/>
+
+			<element maxOccurs="unbounded" name="TransactionDetails" type="xsd1:TransactionDetail"/>
+		  </sequence>
+		</complexType>
+	  </element>
+
+	  <element name="TransactionDetail">
+		<complexType>
+		  <sequence>
+			<element name="AccomdKept" type="xsd:bool"/>
+			<element name="Action" type="xsd:string"/>
+			<element name="ActivityType" type="xsd:string"/>
+			<element name="Activity/Operation" type="xsd:string"/>
+			<element name="BillingClass" type="xsd:string"/>
+			<element name="Breaks" type="xsd:double"/>
+			<element name="CasualOvertimeHours" type="xsd:bool"/>
+			<element name="ChargeCode" type="xsd:string"/>
+			<element name="CasualOvertimeHours" type="xsd:double"/>
+			<element name="Country" type="xsd:string"/>
+			<element name="CSA" type="xsd:bool"/>
+			<element name="Customer" type="xsd:string"/>
+			<element name="CustomerWONo." type="xsd:string"/>
+			<element name="DailyDate" type="xsd:date"/>
+			<element name="DoubleTimeHours" type="xsd:double"/>
+			<element name="EquipmentNumber" type="xsd:string"/>
+			<element name="FieldWork" type="xsd:bool"/>
+			<element name="FieldOvertimeHours" type="xsd:double"/>
+			<element name="Hotel" type="xsd:bool"/>
+			<element name="Hours" type="xsd:double"/>
+			<element name="Industrial" type="xsd:bool"/>
+			<element name="LocaltoSite" type="xsd:bool"/>
+			<element name="MDR" type="xsd:string"/>
+			<element name="Mileage" type="xsd:int"/>
+			<element name="NightShift" type="xsd:bool"/>
+			<element name="Non-ScheduledWork" type="xsd:bool"/>
+			<element name="Notes" type="xsd:string"/>
+			<element name="OffShore" type="xsd:bool"/>
+			<element name="OnSite" type="xsd:bool"/>
+			<element name="Operation" type="xsd:string"/>
+			<element name="Overtime" type="xsd:double"/>
+			<element name="TripleTime" type="xsd:double"/>
+			<element name="Outage" type="xsd:string"/>
+			<element name="Overnight" type="xsd:bool"/>
+			<element name="OvertimeinMoney" type="xsd:bool"/>
+			<element name="OvertimeinTime" type="xsd:bool"/>
+			<element name="PerDiem" type="xsd:double"/>
+			<element name="PercentComplete" type="xsd:double"/>
+			<element name="Phase" type="xsd:string"/>
+			<element name="PremiumAllowed" type="xsd:bool"/>
+			<element name="Project" type="xsd:string"/>
+			<element name="ProjectLocation" type="xsd:string"/>
+			<element name="Radius" type="xsd:string"/>
+			<element name="ResourceCode" type="xsd:string"/>
+			<element name="RTS" type="xsd:string"/>
+			<element name="SectionSubsection" type="xsd:string"/>
+			<element name="Shift" type="xsd:string"/>
+			<element name="Site" type="xsd:string"/>
+			<element name="StraightTimeHours" type="xsd:double"/>
+			<element name="State" type="xsd:string"/>
+			<element name="SubTimeType" type="xsd:string"/>
+			<element name="System" type="xsd:string"/>
+			<element name="Task" type="xsd:string"/>
+			<element name="TeamLead" type="xsd:bool"/>
+			<element name="TimeIn" type="xsd:datetime"/>
+			<element name="TimeofBorderCrossing" type="xsd:datetime"/>
+			<element name="TimeOut" type="xsd:datetime"/>
+			<element name="TimeType" type="xsd:string"/>
+			<element name="TravelTime" type="xsd:double"/>
+			<element name="TravelonSite" type="xsd:double"/>
+			<element name="Turbine" type="xsd:string"/>
+			<element name="WarrantyServiceCode" type="xsd:string"/>
+			<element name="WorkOrder" type="xsd:string"/>
+		  </sequence>
+		</complexType>
+	  </element>
+	</schema>
+  </types>
+
+  <message name="TransactionHeaders">
+	<part name="TransactionHeaders" type="xsd1:TransactionHeader"  maxOccurs="unbounded" />
+  </message>
+
+  <portType name="Transactions">
+	<operation name="UploadTimeTransactions">
+	  <input name="TransactionHeaders" message="TransactionHeaders"/>
+	</operation>
+  </portType>
+</description>
