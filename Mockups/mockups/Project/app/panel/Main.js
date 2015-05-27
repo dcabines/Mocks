@@ -4,8 +4,6 @@
 	controller: 'mycontroller',
 
 	requires: [
-		'MyApp.grid.Sample',
-		'MyApp.grid.Rates',
 		'MyApp.panel.Shell',
 		'MyApp.controller.MyController'
 	],
@@ -37,9 +35,9 @@
 			}
 		},
 		{
-			reference: 'shell',
+			reference: 'Shell',
 			title: 'Project Details',
-			xtype: 'shell',
+			xtype: 'Shell',
 			region: 'center',
 			border: false
 		}

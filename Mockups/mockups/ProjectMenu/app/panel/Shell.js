@@ -4,14 +4,17 @@
 	autoScroll: true,
 
 	requires: [
-		'MyApp.store.Sample'
+		'MyApp.grid.Sample'
 	],
+
+	defaults: {
+		border: false
+	},
 
 	items: [
 		{
-			xtype: 'sample',
-			border: false,
-			store: Ext.create('MyApp.store.Sample')
+			xtype: 'Sample',
+			store: 'Sample'
 		}
 	]
 });

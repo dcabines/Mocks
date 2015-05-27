@@ -1,12 +1,20 @@
 ﻿Ext.define('MyApp.panel.Shell', {
 	extend: 'Ext.panel.Panel',
-	alias: 'widget.shell',
+	alias: 'widget.Shell',
 	autoScroll: true,
+
+	requires: [
+		'MyApp.grid.Sample'
+	],
+
+	defaults: {
+		border: false
+	},
 
 	items: [
 		{
-			xtype: 'container',
-			html: 'Select an item from the menu.'
+			xtype: 'Sample',
+			store: 'Sample'
 		}
 	]
 });

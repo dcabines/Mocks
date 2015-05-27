@@ -4,8 +4,6 @@
 	controller: 'mycontroller',
 
 	requires: [
-		'MyApp.grid.Sample',
-		'MyApp.grid.Rates',
 		'MyApp.panel.Shell',
 		'MyApp.controller.MyController'
 	],

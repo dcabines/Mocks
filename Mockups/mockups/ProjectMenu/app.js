@@ -3,7 +3,7 @@ Ext.Loader.setConfig({
 });
 
 Ext.application({
-	stores: [],
+	stores: ['Sample', 'Rates'],
 
 	views: [
 		'MyViewport'

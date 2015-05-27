@@ -1,49 +1,56 @@
-Ext.define('MyApp.store.Sample', {
-	extend: 'Ext.data.Store',
+(function () {
+	var fields = [
+		'budget_type',
+		'charge_code',
+		'charge_code_desc',
+		'suffix',
+		'suffix_descr',
+		'budget_date',
+		'budget_amount',
+		'go_num',
+		'seq_no'
+	];
 
-	constructor: function (cfg) {
-		var fields = [
-			'budget_type',
-			'charge_code',
-			'charge_code_desc',
-			'suffix',
-			'suffix_descr',
-			'budget_date',
-			'budget_amount',
-			'go_num',
-			'seq_no'
-		];
+	function getRandomInt(min, max) {
+		return Math.floor(Math.random() * (max - min)) + min;
+	}
 
-		var getRandomInt = function (min, max) {
-			return Math.floor(Math.random() * (max - min)) + min;
+	function makeRecord() {
+		var record = {};
+
+		Ext.each(fields, function (field) {
+			record[field] = getRandomInt(1, 11);
+		});
+
+		return record;
+	};
+
+	function makeData() {
+		var data = [];
+
+		for (var j = 0; j < 50; j++) {
+			data[j] = makeRecord();
 		}
 
-		var makeRecord = function () {
-			var record = {};
+		return data;
+	};
 
-			Ext.each(fields, function (field) {
-				record[field] = getRandomInt(1, 11);
-			});
+	Ext.define('MyApp.store.Sample', {
+		extend: 'Ext.data.Store',
+		alias: 'store.Sample',
 
-			return record;
-		};
+		constructor: function (cfg) {
+			cfg = cfg || {};
 
-		var makeData = function () {
-			var data = [];
+			this.callParent([Ext.apply({
+				data: makeData(),
+				fields: fields
+			}, cfg)]);
+		},
 
-			for (var j = 0; j < 50; j++) {
-				data[j] = makeRecord();
-			}
-
-			return data;
-		};
-
-		var me = this;
-		cfg = cfg || {};
-		me.callParent([Ext.apply({
-			storeId: 'SearchResults',
-			data: makeData(),
-			fields: fields
-		}, cfg)]);
-	}
-});
+		refresh: function () {
+			var data = makeData();
+			this.loadData(data);
+		}
+	});
+}());

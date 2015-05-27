@@ -2,16 +2,22 @@
 	extend: 'Ext.app.ViewController',
 	alias: 'controller.mycontroller',
 
-	requires: ['MyApp.store.Sample', 'MyApp.store.Rates'],
+	requires: ['MyApp.grid.Rates'],
 
 	onSelect: function (tree, record) {
-		var shell = this.lookupReference('shell');
+		var shell = this.lookupReference('Shell');
 		var title = record.get('text');
 		var header = shell.getHeader();
+		var xtype = title == 'Rates Setup' ? 'Rates' : 'Sample';
+		var store = Ext.StoreManager.lookup(xtype);
+
+		if (store.refresh) {
+			store.refresh();
+		}
+
 		var component = Ext.create({
-			xtype: title == 'Rates Setup' ? 'rates' : 'sample',
-			border: false,
-			store: Ext.create(title == 'Rates Setup' ? 'MyApp.store.Rates' : 'MyApp.store.Sample')
+			xtype: xtype,
+			store: store
 		});
 
 		shell.removeAll();

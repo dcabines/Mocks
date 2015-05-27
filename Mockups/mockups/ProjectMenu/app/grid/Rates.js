@@ -1,6 +1,6 @@
 ﻿Ext.define('MyApp.grid.Rates', {
 	extend: 'Ext.grid.Panel',
-	alias: 'widget.rates',
+	alias: 'widget.Rates',
 
 	columns: [
 		{

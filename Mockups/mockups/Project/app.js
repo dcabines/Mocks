@@ -3,9 +3,7 @@ Ext.Loader.setConfig({
 });
 
 Ext.application({
-	stores: [
-		'MenuLinks'
-	],
+	stores: ['MenuLinks', 'Sample', 'Rates'],
 
 	views: [
 		'MyViewport'

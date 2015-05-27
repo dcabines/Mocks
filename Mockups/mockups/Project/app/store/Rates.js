@@ -1,5 +1,6 @@
 Ext.define('MyApp.store.Rates', {
 	extend: 'Ext.data.Store',
+	alias: 'store.Rates',
 
 	constructor: function (cfg) {
 		var fields = [
@@ -56,7 +57,6 @@ Ext.define('MyApp.store.Rates', {
 		var me = this;
 		cfg = cfg || {};
 		me.callParent([Ext.apply({
-			storeId: 'SearchResults',
 			data: makeData(),
 			fields: fields
 		}, cfg)]);
